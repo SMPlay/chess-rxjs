@@ -1,0 +1,15 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "chess pet project with rxjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chess",
+    "rxjs"
+  ],
+  "author": "Pavel Sokolov",
+  "license": "ISC"
+}
