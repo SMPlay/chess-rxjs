@@ -1,3 +1,5 @@
+import { Horse, King, Pawn, Queen, Rook } from './figures';
+
 export interface CellOptions {
   className?: string;
   cellNumber?: number | null;
@@ -33,6 +35,23 @@ export class Board {
       [1, 0, 1, 0, 1, 0, 1, 0],
     ];
     this.cellLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+  }
+
+  private createFigures() {
+    const container = document.createElement('div') as Element;
+
+    const blackHorse = new Horse({ x: 0, y: 0 }, container, 'black');
+    const whiteHorse = new Horse({ x: 0, y: 0 }, container, 'white');
+    const blackKing = new King({ x: 0, y: 0 }, container, 'black');
+    const whiteKing = new King({ x: 0, y: 0 }, container, 'white');
+    const blackPawn = new Pawn({ x: 0, y: 0 }, container, 'black');
+    const whitePawn = new Pawn({ x: 0, y: 0 }, container, 'white');
+    const blackQueen = new Queen({ x: 0, y: 0 }, container, 'black');
+    const whiteQueen = new Queen({ x: 0, y: 0 }, container, 'white');
+    const blackRook = new Rook({ x: 0, y: 0 }, container, 'black');
+    const whiteRook = new Rook({ x: 0, y: 0 }, container, 'white');
+
+    return container;
   }
 
   private addAdditionalCellInfo({ className, info, oddRow, oddCell }: AdditionalCellInfo) {
@@ -81,5 +100,6 @@ export class Board {
     });
 
     this.parent?.appendChild(this.chessField);
-  } 
+    this.parent?.appendChild(this.createFigures());
+  }
 }

@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "es6",
     "module": "es2015",
     "sourceMap": true,
     "strict": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node"
+  },
+  "include": ["src", "src/custom.d.ts"]
 }
