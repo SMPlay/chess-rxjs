@@ -20,6 +20,17 @@ module.exports = {
         use: 'ts-loader',
       },
       {
+        test: /\.svg$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+      {
         test: /\.s[ac]ss$/,
         include: [path.resolve(__dirname, '../src')],
         use: [

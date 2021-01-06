@@ -1,0 +1,10 @@
+export type FigureType = 'blackHorse'
+  | 'whiteHorse'
+  | 'blackKing'
+  | 'whiteKing'
+  | 'blackPawn'
+  | 'whitePawn'
+  | 'blackQueen'
+  | 'whiteQueen'
+  | 'blackRook'
+  | 'whiteRook';

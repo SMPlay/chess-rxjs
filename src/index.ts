@@ -1,4 +1,4 @@
-import { Board } from './board';
+import { Board } from './components';
 
 import './style/style.scss';
 

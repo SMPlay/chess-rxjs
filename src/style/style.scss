@@ -42,3 +42,12 @@ $brown-light: #f0d9b5;
 .cells-row {
   display: flex;
 }
+
+.figure-container {
+  display: inline-block;
+  cursor: pointer;
+
+  .figure {
+    pointer-events: none;
+  }
+}
