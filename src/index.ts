@@ -1,8 +1,8 @@
-import { c } from './a';
+import { Board } from './board';
 
-const a = (b: string) => {
-  console.log(b)
-}
+import './style/style.scss';
 
-c(3)
-a('123')
+const parent = document.getElementById('some-container');
+const board = new Board(parent);
+
+board.createBoard();

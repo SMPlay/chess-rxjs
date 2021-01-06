@@ -1,0 +1,44 @@
+$brown: #b58863;
+$brown-light: #f0d9b5;
+
+.chess-field {
+  display: inline-block;
+  width: 400px;
+  border: 2px solid black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  &__cell, &__cell--black {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: $brown-light;
+
+    &-letter,
+    &-number {
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      font-size: 14px;
+      color: $brown-light;
+      cursor: default;
+
+      &--odd {
+        color: $brown;
+      }
+    }
+
+    &-letter {
+      left: calc(100% - 14px);
+      top: calc(100% - 17px);
+      text-transform: uppercase;
+    }
+
+    &--black {
+      background: $brown;
+    }
+  }
+}
+
+.cells-row {
+  display: flex;
+}
