@@ -20,15 +20,21 @@ module.exports = {
         use: 'ts-loader',
       },
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/,
         include: [path.resolve(__dirname, '../src')],
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: [
+          process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    }),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
       filename: 'index.html'
